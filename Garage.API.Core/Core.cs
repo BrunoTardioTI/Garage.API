@@ -1,6 +1,6 @@
 ﻿namespace Garage.API.Core
 {
-    public class Class1
+    public class Core
     {
 
     }
