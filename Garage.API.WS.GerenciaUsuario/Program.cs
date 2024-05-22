@@ -1,4 +1,7 @@
 
+using Garage.API.WS.GerenciaUsuario.Facade;
+using Garage.API.WS.GerenciaUsuario.Service;
+
 namespace Garage.API.WS.GerenciaUsuario
 {
     public class Program
@@ -11,8 +14,13 @@ namespace Garage.API.WS.GerenciaUsuario
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Registro das dependências
+            builder.Services.AddScoped<IUsuarioFacade, UsuarioFacade>();
+            builder.Services.AddScoped<IUsuarioService, UsuarioService>(); 
 
             var app = builder.Build();
 
