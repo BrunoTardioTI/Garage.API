@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.API.Core", "..\Garag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.API.Teste", "..\Garage.API.Teste\Garage.API.Teste.csproj", "{FFBFAC03-F5B2-41FA-8609-EB274E2B3121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.API.WS.GerenciaUsuario", "..\Garage.API.WS.GerenciaUsuario\Garage.API.WS.GerenciaUsuario.csproj", "{E679C4D9-A349-4758-B1DA-F820A7777B12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.API.WS.GerenciaVeiculo", "..\Garage.API.WS.GerenciaVeiculo\Garage.API.WS.GerenciaVeiculo.csproj", "{DFEE4F1A-A768-4484-B427-2425A03B86A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.API.WS.GerenciaGaragem", "..\Garage.API.WS.GerenciaGaragem\Garage.API.WS.GerenciaGaragem.csproj", "{0247EC6D-6677-459C-857E-7B6A4CED491E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{FFBFAC03-F5B2-41FA-8609-EB274E2B3121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFBFAC03-F5B2-41FA-8609-EB274E2B3121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFBFAC03-F5B2-41FA-8609-EB274E2B3121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E679C4D9-A349-4758-B1DA-F820A7777B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E679C4D9-A349-4758-B1DA-F820A7777B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E679C4D9-A349-4758-B1DA-F820A7777B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E679C4D9-A349-4758-B1DA-F820A7777B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFEE4F1A-A768-4484-B427-2425A03B86A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFEE4F1A-A768-4484-B427-2425A03B86A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFEE4F1A-A768-4484-B427-2425A03B86A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFEE4F1A-A768-4484-B427-2425A03B86A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0247EC6D-6677-459C-857E-7B6A4CED491E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0247EC6D-6677-459C-857E-7B6A4CED491E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0247EC6D-6677-459C-857E-7B6A4CED491E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0247EC6D-6677-459C-857E-7B6A4CED491E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
