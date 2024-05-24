@@ -1,4 +1,5 @@
 
+using Garage.API.WS.GerenciaUsuario.Depedencia;
 using Garage.API.WS.GerenciaUsuario.Facade;
 using Garage.API.WS.GerenciaUsuario.Service;
 
@@ -18,9 +19,8 @@ namespace Garage.API.WS.GerenciaUsuario
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            // Registro das dependências
-            builder.Services.AddScoped<IUsuarioFacade, UsuarioFacade>();
-            builder.Services.AddScoped<IUsuarioService, UsuarioService>(); 
+            // Chamar o método estático para registrar dependências
+            DependencyInjection.RegisterServices(builder.Services);
 
             var app = builder.Build();
 
