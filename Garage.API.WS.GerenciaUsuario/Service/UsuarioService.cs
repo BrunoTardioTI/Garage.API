@@ -1,44 +1,33 @@
 ﻿using Garage.API.Core.Entities;
+using Garage.API.WS.GerenciaUsuario.Repositories;
 
 namespace Garage.API.WS.GerenciaUsuario.Service
 {
-
     public interface IUsuarioService
     {
-        Usuario CadastraNovoUsuario();
-        Usuario AtualizarUsuario();
-        Usuario ExcluirUsuario();
+        void CriarUsuario(Usuario usuario);
+        Usuario ObterUsuarioPorId(Guid id);
     }
+
     public class UsuarioService : IUsuarioService
     {
-        public Usuario CadastraNovoUsuario()
+        private readonly AppDbContext _context;
+
+        public UsuarioService(AppDbContext context)
         {
-            // Receber o usuario
-            // Validar certos campos
-            // Verficar condicoes se ja tem anterior;
-            // Fabricar usuario
-            // Executar insert
-            // Retornar 
-            return null;
-        }
-        public Usuario AtualizarUsuario()
-        {
-            // Receber o usuario
-            // Validar certos campos
-            // Verficar condicoes se ja tem anterior;
-            // atualizar
-            // Retornar 
-            return null;
+            _context = context;
         }
 
-        public Usuario ExcluirUsuario()
+        public void CriarUsuario(Usuario usuario)
         {
-            // Receber o usuario
-            // Validar certos campos
-            // Verficar condicoes se ja tem anterior;
-            // desativar
-            // Retornar 
-            return null;
+            usuario.Id = Guid.NewGuid();
+            _context.Usuarios.Add(usuario);
+            _context.SaveChanges();
+        }
+
+        public Usuario ObterUsuarioPorId(Guid id)
+        {
+            return  _context.Usuarios.Find(id);
         }
     }
 }

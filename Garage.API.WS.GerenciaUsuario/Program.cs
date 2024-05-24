@@ -2,6 +2,7 @@
 using Garage.API.WS.GerenciaUsuario.Depedencia;
 using Garage.API.WS.GerenciaUsuario.Facade;
 using Garage.API.WS.GerenciaUsuario.Service;
+using System;
 
 namespace Garage.API.WS.GerenciaUsuario
 {
@@ -19,8 +20,11 @@ namespace Garage.API.WS.GerenciaUsuario
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+            // Configurar o banco de dados SQLite
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             // Chamar o método estático para registrar dependências
-            DependencyInjection.RegisterServices(builder.Services);
+            DependencyInjection.RegisterServices(builder.Services, connectionString);
 
             var app = builder.Build();
 

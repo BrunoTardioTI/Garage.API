@@ -1,5 +1,7 @@
-﻿using Garage.API.WS.GerenciaUsuario.Facade;
+﻿using Garage.API.Core.Entities;
+using Garage.API.WS.GerenciaUsuario.Facade;
 using Garage.API.WS.GerenciaUsuario.Models;
+using Garage.API.WS.GerenciaUsuario.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Garage.API.WS.GerenciaUsuario.Controllers
@@ -9,22 +11,24 @@ namespace Garage.API.WS.GerenciaUsuario.Controllers
     [Route("[controller]")]
     public class GerenciaUsuarioController : ControllerBase
     {
-        private readonly ILogger<GerenciaUsuarioController> _logger;
+        private readonly IUsuarioService _usuarioService;
 
-        private readonly IUsuarioFacade _usuarioFacade;
-        public GerenciaUsuarioController(
-            ILogger<GerenciaUsuarioController> logger,
-            IUsuarioFacade usuarioFacade)
+        public GerenciaUsuarioController(IUsuarioService usuarioService)
         {
-            _logger = logger;
-            _usuarioFacade = usuarioFacade;
+            _usuarioService = usuarioService;
         }
 
+        [HttpPost]
+        public IActionResult CriarUsuario([FromBody] Usuario usuario)
+        {
+            _usuarioService.CriarUsuario(usuario);
+            return Ok(usuario);
+        }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUsuario(long id)
+        public IActionResult ObterUsuarioPorId(Guid id)
         {
-            var usuario = await _usuarioFacade.ObterUsuarioPorId(id);
+            var usuario = _usuarioService.ObterUsuarioPorId(id);
             if (usuario == null)
             {
                 return NotFound();
